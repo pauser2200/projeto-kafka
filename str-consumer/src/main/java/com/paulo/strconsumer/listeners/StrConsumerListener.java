@@ -24,4 +24,9 @@ public class StrConsumerListener {
     public void log(String message) {
         log.info("LOG ::: Mensagem recebida {}", message);
     }
+
+    @KafkaListener(groupId = "group-2", topics = "str-topic", containerFactory = "validMessageContainerFactory")
+    public void interceptor(String message) {
+        log.info("Interceptor ::: Mensagem recebida: {}", message);
+    }
 }

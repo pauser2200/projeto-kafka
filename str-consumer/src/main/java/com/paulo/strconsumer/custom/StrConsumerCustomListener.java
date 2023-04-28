@@ -23,8 +23,8 @@ public @interface StrConsumerCustomListener {
     @AliasFor(annotation = KafkaListener.class, attribute = "groupId")
     String groupId() default "";
 
-    @AliasFor(annotation = KafkaListener.class, attribute = "topicPartitions", value = "teste")
-    TopicPartition[] topicPartitions() default {@TopicPartition(topic = "str-topic", partitions = {"teste"})};
+    @AliasFor(annotation = KafkaListener.class, attribute = "topicPartitions")
+    TopicPartition[] topicPartitions() default {};
 }
 
 
